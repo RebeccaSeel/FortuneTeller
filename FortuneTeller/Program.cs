@@ -18,9 +18,9 @@ namespace FortuneTeller
             string favColor;
             string numSiblings;
             string yearRetire;
-            string vacHome = ();
+            string vacHome;
             double bankAccount;
-            string transport = ();
+            string transport;
 
             //have user enter required data           
             Console.WriteLine("What is your first name? ");
@@ -127,26 +127,26 @@ namespace FortuneTeller
 
             if (birthMonth >= 1 && birthMonth <= 4)
             {
-                bankAccount = "100";
+                bankAccount = 100;
             }
             else if (birthMonth >= 5 && birthMonth <= 8)
             {
-                bankAccount = "1000";
+                bankAccount = 1000;
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
-                bankAccount = "10000";
+                bankAccount = 10000;
             }
             else
             {
-                bankAccount = "0";
+                bankAccount = 0;
             }
 
             //Final Output to User [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, 
             //a vacation home in [Location] and a [Mode of Transportation].
             //Program should be able to handle whether or not a user inputs capital or lowercase letters.
             {
-                ConsoleWrite.Line(firstName + lastName + " will retire in " + yearRetire + " years " with " + bankAccount + " in the bank,\n a vacation home in " + vacHome + " and a " + transport + ".");
+                Console.WriteLine(firstName + lastName + " will retire in " + yearRetire + " years with $ " + bankAccount + " in the bank,\n a vacation home in " + vacHome + " and a " + transport + ".");
             }
 
             //Extra: Give the user the ability to quit the program at any point where the program is looking for user input, 
