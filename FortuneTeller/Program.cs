@@ -127,19 +127,19 @@ namespace FortuneTeller
 
             if (birthMonth >= 1 && birthMonth <= 4)
             {
-                bankAccount = 100;
+                bankAccount = 100d;
             }
             else if (birthMonth >= 5 && birthMonth <= 8)
             {
-                bankAccount = 1000;
+                bankAccount = 1000d;
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
-                bankAccount = 10000;
+                bankAccount = 10000d;
             }
             else
             {
-                bankAccount = 0;
+                bankAccount = 0d;
             }
 
             //Final Output to User [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, 
