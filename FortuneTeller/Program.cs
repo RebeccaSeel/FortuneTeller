@@ -24,11 +24,11 @@ namespace FortuneTeller
 
             //have user enter required data           
             Console.WriteLine("What is your first name? ");
-            firstName = (Console.ReadLine());
+            firstName = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("What is your last name? ");
-            lastName = (Console.ReadLine());
+            lastName = Console.ReadLine();
             Console.WriteLine("");
 
             Console.WriteLine("What is your age? ");
@@ -41,7 +41,7 @@ namespace FortuneTeller
 
             //If the user does not know what ROYGBIV is, ask them to enter “Help” to get a list of the ROYGBIV colors
             Console.WriteLine("What is your favorite ROYGBIV color? Type \"Help\" to get a list of colors. ");
-            favColor = (Console.ReadLine());
+            favColor = Console.ReadLine();
             Console.WriteLine("");
             if (favColor.Equals("Help"))
             {
@@ -53,7 +53,7 @@ namespace FortuneTeller
             }
 
             Console.WriteLine("How many siblings do you have? ");
-            numSiblings = (Console.ReadLine());
+            numSiblings = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
             //If the user’s age is an odd number, then they will retire in ____ years, or ___ years if their age is an even number.
@@ -153,8 +153,8 @@ namespace FortuneTeller
             //a vacation home in [Location] and a [Mode of Transportation].
             //Program should be able to handle whether or not a user inputs capital or lowercase letters.
             {
-                Console.WriteLine(firstName + lastName + " will retire in " + yearRetire + " years with $ " + bankAccount + );
-                Console.Write("in the bank, a vacation home in " + vacHome + " and a " + transport + ".");
+                Console.WriteLine(firstName + lastName + " will retire in " + yearRetire + " years with $ ");
+                Console.Write(+ bankAccount + "in the bank, a vacation home in " + vacHome + " and a " + transport + ".");
             }
 
             //Extra: Give the user the ability to quit the program at any point where the program is looking for user input, 
