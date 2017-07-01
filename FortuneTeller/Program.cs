@@ -16,8 +16,8 @@ namespace FortuneTeller
             int age;
             int birthMonth;
             string favColor;
-            string numSiblings;
-            string yearRetire;
+            int numSiblings;
+            int yearRetire;
             string vacHome;
             double bankAccount;
             string transport;
@@ -52,7 +52,7 @@ namespace FortuneTeller
                 Console.WriteLine("");
             }
 
-            Console.WriteLine("How many siblings to you have? ");
+            Console.WriteLine("How many siblings do you have? ");
             numSiblings = (Console.ReadLine());
             Console.WriteLine("");
 
@@ -60,11 +60,11 @@ namespace FortuneTeller
 
             if (age % 2 == 0)
             {
-                yearRetire = "10";
+                yearRetire = 10;
             }
             else
             {
-                yearRetire = "15";
+                yearRetire = 15;
             }
 
             //If the user’s number of siblings is 0, then they will have a vacation home in ____ (location), 
@@ -73,30 +73,30 @@ namespace FortuneTeller
             //or 3 then they will have a vacation home in ____ (location), 
             //or more than 3 then they will have a vacation home in ____ (location). 
             //If the user enters anything other than a number less than or equal to 0, they should get a bad vacation home!
-
-            if (numSiblings = 0)
+            
+            if (numSiblings == 0)
             {
-                vacHome = "Paris";
+                Convert.ToString(vacHome = "Paris");
             }
-            else if (numSiblings = 1)
+            else if (numSiblings == 1)
             {
-                vacHome = "Melbourne";
+                Convert.ToString(vacHome = "Melbourne");
             }
-            else if (numSiblings = 2)
+            else if (numSiblings == 2)
             {
-                vacHome = "California";
+                Convert.ToString(vacHome = "California");
             }
-            else if (numSiblings = 3)
+            else if (numSiblings == 3)
             {
-                vacHome = "Quebec";
+                Convert.ToString(vacHome = "Quebec");
             }
             else if (numSiblings >= 4)
             {
-                vacHome = "the Amazon";
+                Convert.ToString(vacHome = "the Amazon");
             }
-            else (numSiblings < 0);
+            else 
             {
-                vacHome = "North Korea";
+                Convert.ToString(vacHome = "North Korea");
             }
 
             //Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation 
@@ -104,19 +104,26 @@ namespace FortuneTeller
 
             switch (favColor)
             {
-                case "red": transport = "RV";
+                case "red":
+                    transport = "RV";
                     break;
-                case "orange": transport = "jet";
+                case "orange":
+                    transport = "jet";
                     break;
-                case "yellow": transport = "motorcycle";
+                case "yellow":
+                    transport = "motorcycle";
                     break;
-                case "green": transport = "bicycle";
+                case "green":
+                    transport = "bicycle";
                     break;
-                case "blue": transport = "taxi cab";
+                case "blue":
+                    transport = "taxi cab";
                     break;
-                case "indigo": transport = "boat";
+                case "indigo":
+                    transport = "boat";
                     break;
-                case "violet": transport = "helicopter";
+                case "violet":
+                    transport = "helicopter";
                     break;
             }
 
@@ -127,26 +134,27 @@ namespace FortuneTeller
 
             if (birthMonth >= 1 && birthMonth <= 4)
             {
-                bankAccount = 100d;
+                bankAccount = 100.00;
             }
             else if (birthMonth >= 5 && birthMonth <= 8)
             {
-                bankAccount = 1000d;
+                bankAccount = 1000.00;
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
-                bankAccount = 10000d;
+                bankAccount = 10000.00;
             }
             else
             {
-                bankAccount = 0d;
+                bankAccount = 0.00;
             }
 
             //Final Output to User [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, 
             //a vacation home in [Location] and a [Mode of Transportation].
             //Program should be able to handle whether or not a user inputs capital or lowercase letters.
             {
-                Console.WriteLine(firstName + lastName + " will retire in " + yearRetire + " years with $ " + bankAccount + " in the bank,\n a vacation home in " + vacHome + " and a " + transport + ".");
+                Console.WriteLine(firstName + lastName + " will retire in " + yearRetire + " years with $ " + bankAccount + );
+                Console.Write("in the bank, a vacation home in " + vacHome + " and a " + transport + ".");
             }
 
             //Extra: Give the user the ability to quit the program at any point where the program is looking for user input, 
