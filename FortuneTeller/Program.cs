@@ -21,6 +21,7 @@ namespace FortuneTeller
             string vacHome;
             double bankAccount;
             string transport;
+            
 
             //have user enter required data           
             Console.WriteLine("What is your first name? ");
@@ -102,6 +103,7 @@ namespace FortuneTeller
             //Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation 
             //(i.e. car, boat, plane, etc.)
 
+            transport = null;
             switch (favColor)
             {
                 case "red":
