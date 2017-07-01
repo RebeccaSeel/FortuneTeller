@@ -155,8 +155,10 @@ namespace FortuneTeller
             //a vacation home in [Location] and a [Mode of Transportation].
             //Program should be able to handle whether or not a user inputs capital or lowercase letters.
             {
-                Console.WriteLine(firstName + lastName + " will retire in " + yearRetire + " years with $ ");
-                Console.Write(+ bankAccount + "in the bank, a vacation home in " + vacHome + " and a " + transport + ".");
+                Console.WriteLine(firstName + " " + lastName + " will retire in " + yearRetire + " years with $" + bankAccount + " in the bank,");
+                Console.Write("a vacation home in " + vacHome + " and a " + transport + ".");
+                Console.WriteLine("");
+                Console.WriteLine("");
             }
 
             //Extra: Give the user the ability to quit the program at any point where the program is looking for user input, 
