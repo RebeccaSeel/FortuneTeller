@@ -44,12 +44,13 @@ namespace FortuneTeller
             Console.WriteLine("What is your favorite ROYGBIV color? Type \"Help\" to get a list of colors. ");
             favColor = Console.ReadLine();
             Console.WriteLine("");
-            if (favColor.Equals("Help"))
+            //if (favColor.Equals("Help"))
+            if (favColor.Equals("help", StringComparison.CurrentCultureIgnoreCase))
             {
                 Console.WriteLine("ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet");
                 Console.WriteLine("");
-                Console.WriteLine("What is your favorite ROYBGIV color? ");
-                Console.ReadLine();
+                Console.WriteLine("So, what is your favorite ROYBGIV color? ");
+                favColor = Console.ReadLine();
                 Console.WriteLine("");
             }
 
@@ -59,13 +60,13 @@ namespace FortuneTeller
 
             //If the user’s age is an odd number, then they will retire in ____ years, or ___ years if their age is an even number.
 
-            if (age % 2 == 0)
+            if (age % 2 != 0)
             {
-                yearRetire = 10;
+                yearRetire = 15;
             }
             else
             {
-                yearRetire = 15;
+                yearRetire = 10;
             }
 
             //If the user’s number of siblings is 0, then they will have a vacation home in ____ (location), 
