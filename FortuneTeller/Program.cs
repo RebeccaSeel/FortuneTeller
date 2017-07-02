@@ -45,6 +45,7 @@ namespace FortuneTeller
             //allow user to ask for “Help” to get a list of the ROYGBIV colors
             Console.WriteLine("What is your favorite ROYGBIV color? Type \"Help\" to get a list of colors. ");
             favColor = Console.ReadLine();
+            favColor = favColor.ToLower();
             Console.WriteLine("");
             if (favColor.Equals("help", StringComparison.CurrentCultureIgnoreCase))
             {
@@ -52,9 +53,10 @@ namespace FortuneTeller
                 Console.WriteLine("");
                 Console.WriteLine("So, what is your favorite ROYBGIV color? ");
                 favColor = Console.ReadLine();
+                favColor = favColor.ToLower();
                 Console.WriteLine("");
             }
-
+            
             Console.WriteLine("How many siblings do you have? ");
             numSiblings = int.Parse(Console.ReadLine());
             Console.WriteLine("");
