@@ -21,29 +21,54 @@ namespace FortuneTeller
             string vacHome;
             decimal bankAccount;
             string transport;
-            
+
+            //welcome user and let then know how to end the game
+            Console.WriteLine("Welcome to Fortune Teller! Learn your future instantly!");
+            Console.WriteLine("");
+            Console.WriteLine("You can type \"Quit\" at any point to stop playing. Let's get started!");
+            Console.WriteLine("");
 
             //have user enter required data           
-            Console.WriteLine("What is your first name? ");
+            Console.WriteLine("What is your first name?");
             firstName = Console.ReadLine();
             firstName = firstName.Substring(0, 1).ToUpper() + firstName.Substring(1).ToLower();
             Console.WriteLine("");
-
-            Console.WriteLine("What is your last name? ");
+            if (firstName.Equals("quit", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
+                        
+            Console.WriteLine("What is your last name?");
             lastName = Console.ReadLine();
             lastName = lastName.Substring(0, 1).ToUpper() + lastName.Substring(1).ToLower();
             Console.WriteLine("");
+            if (lastName.Equals("quit", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
 
-            Console.WriteLine("What is your age? ");
+            Console.WriteLine("What is your age?");
             age = int.Parse(Console.ReadLine());
             Console.WriteLine("");
+            //if (age.Equals("quit", StringComparison.CurrentCultureIgnoreCase))
+            //{
+            //    Console.WriteLine("Nobody likes a quitter...");
+            //    return;
+            //}
 
-            Console.WriteLine("What is your birth month in numeric form? ");
+            Console.WriteLine("What is your birth month in numeric form?");
             birthMonth = int.Parse(Console.ReadLine());
             Console.WriteLine("");
+            //if (birthMonth.Equals("quit", StringComparison.CurrentCultureIgnoreCase))
+            //{
+            //    Console.WriteLine("Nobody likes a quitter...");
+            //    return;
+            //}
 
             //allow user to ask for “Help” to get a list of the ROYGBIV colors
-            Console.WriteLine("What is your favorite ROYGBIV color? Type \"Help\" to get a list of colors. ");
+            Console.WriteLine("What is your favorite ROYGBIV color? Type \"Help\" to get a list of colors.");
             favColor = Console.ReadLine();
             favColor = favColor.ToLower();
             Console.WriteLine("");
@@ -56,10 +81,20 @@ namespace FortuneTeller
                 favColor = favColor.ToLower();
                 Console.WriteLine("");
             }
-            
+            if (favColor.Equals("quit", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
+
             Console.WriteLine("How many siblings do you have? ");
             numSiblings = int.Parse(Console.ReadLine());
-            Console.WriteLine("");
+            //Console.WriteLine("");
+            if (Console.ReadLine().Equals("quit", StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
 
             //determine retirement year using remainder calculation for even/odd
             if (age % 2 != 0)
