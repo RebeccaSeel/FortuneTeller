@@ -61,8 +61,7 @@ namespace FortuneTeller
             numSiblings = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
-            //If the user’s age is an odd number, then they will retire in ____ years, or ___ years if their age is an even number.
-
+            //determine retirement year using remainder calculation for even/odd
             if (age % 2 != 0)
             {
                 yearRetire = 15;
@@ -72,13 +71,7 @@ namespace FortuneTeller
                 yearRetire = 10;
             }
 
-            //If the user’s number of siblings is 0, then they will have a vacation home in ____ (location), 
-            //or 1 then they will have a vacation home in ____ (location), 
-            //or 2 then they will have a vacation home in ____ (location), 
-            //or 3 then they will have a vacation home in ____ (location), 
-            //or more than 3 then they will have a vacation home in ____ (location). 
-            //If the user enters anything other than a number less than or equal to 0, they should get a bad vacation home!
-            
+            //determine vacation home by converting number of siblings to string variable for home location
             if (numSiblings == 0)
             {
                 Convert.ToString(vacHome = "Paris");
@@ -104,9 +97,7 @@ namespace FortuneTeller
                 Convert.ToString(vacHome = "North Korea");
             }
 
-            //Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation 
-            //(i.e. car, boat, plane, etc.)
-
+            //set switch statement to identify mode of transportation based on user's favorite color
             transport = null;
             switch (favColor)
             {
@@ -133,35 +124,32 @@ namespace FortuneTeller
                     break;
             }
 
-            //If the user’s birth month is 1-4, they will have $____ in the bank; 
-            //if the user's birth month is 5-8, they will have $____ in the bank; 
-            //and if it is 9 - 12, then they will have $____ in the bank.
-            //If the user enters something other than 01 - 12 as their birth month, they will have $0.00 in the bank.
-
+            //set if else statements to determine bank account value based on birth month
+            //tried various options to insert comma in dollar amount but wasn't able to get it to work
+            //read about "C" currency format specifier but it only worked for the decimal issue as all of my
+            //bankAccount values include cents and two end in 0s
             if (birthMonth >= 1 && birthMonth <= 4)
             {
                 bankAccount = 975.86m;
-                string formatted = bankAccount.ToString("#,##0.00");
+                String.Format("{0:C2}", bankAccount);
             }
             else if (birthMonth >= 5 && birthMonth <= 8)
             {
                 bankAccount = 8521.90m;
-                string formatted = bankAccount.ToString("#,##0.00");
+                String.Format("{0:C2}", bankAccount);
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
                 bankAccount = 13469.27m;
-                string formatted = bankAccount.ToString("#,##0.00");
+                String.Format("{0:C2}", bankAccount);
             }
             else
             {
                 bankAccount = 0.00m;
-                string formatted = bankAccount.ToString("#,##0.00");
+                String.Format("{0:C2}", bankAccount);
             }
 
-            //Final Output to User [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, 
-            //a vacation home in [Location] and a [Mode of Transportation].
-            //Program should be able to handle whether or not a user inputs capital or lowercase letters.
+            //Final oututput to user
             {
                 Console.WriteLine(firstName + " " + lastName + " will retire in " + yearRetire + " years with $" + bankAccount + " in the bank,");
                 Console.Write("a vacation home in " + vacHome + " and " + transport + ".");
