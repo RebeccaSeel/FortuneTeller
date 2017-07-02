@@ -19,17 +19,19 @@ namespace FortuneTeller
             int numSiblings;
             int yearRetire;
             string vacHome;
-            double bankAccount;
+            decimal bankAccount;
             string transport;
             
 
             //have user enter required data           
             Console.WriteLine("What is your first name? ");
             firstName = Console.ReadLine();
+            firstName = firstName.Substring(0, 1).ToUpper() + firstName.Substring(1).ToLower();
             Console.WriteLine("");
 
             Console.WriteLine("What is your last name? ");
             lastName = Console.ReadLine();
+            lastName = lastName.Substring(0, 1).ToUpper() + lastName.Substring(1).ToLower();
             Console.WriteLine("");
 
             Console.WriteLine("What is your age? ");
@@ -40,11 +42,10 @@ namespace FortuneTeller
             birthMonth = int.Parse(Console.ReadLine());
             Console.WriteLine("");
 
-            //If the user does not know what ROYGBIV is, ask them to enter “Help” to get a list of the ROYGBIV colors
+            //allow user to ask for “Help” to get a list of the ROYGBIV colors
             Console.WriteLine("What is your favorite ROYGBIV color? Type \"Help\" to get a list of colors. ");
             favColor = Console.ReadLine();
             Console.WriteLine("");
-            //if (favColor.Equals("Help"))
             if (favColor.Equals("help", StringComparison.CurrentCultureIgnoreCase))
             {
                 Console.WriteLine("ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet");
@@ -108,25 +109,25 @@ namespace FortuneTeller
             switch (favColor)
             {
                 case "red":
-                    transport = "RV";
+                    transport = "an RV";
                     break;
                 case "orange":
-                    transport = "jet";
+                    transport = "a jet";
                     break;
                 case "yellow":
-                    transport = "motorcycle";
+                    transport = "a motorcycle";
                     break;
                 case "green":
-                    transport = "bicycle";
+                    transport = "a bicycle";
                     break;
                 case "blue":
-                    transport = "taxi cab";
+                    transport = "a taxi cab";
                     break;
                 case "indigo":
-                    transport = "boat";
+                    transport = "a boat";
                     break;
                 case "violet":
-                    transport = "helicopter";
+                    transport = "a helicopter";
                     break;
             }
 
@@ -137,19 +138,23 @@ namespace FortuneTeller
 
             if (birthMonth >= 1 && birthMonth <= 4)
             {
-                bankAccount = 100.00;
+                bankAccount = 975.86m;
+                string formatted = bankAccount.ToString("#,##0.00");
             }
             else if (birthMonth >= 5 && birthMonth <= 8)
             {
-                bankAccount = 1000.00;
+                bankAccount = 8521.90m;
+                string formatted = bankAccount.ToString("#,##0.00");
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
-                bankAccount = 10000.00;
+                bankAccount = 13469.27m;
+                string formatted = bankAccount.ToString("#,##0.00");
             }
             else
             {
-                bankAccount = 0.00;
+                bankAccount = 0.00m;
+                string formatted = bankAccount.ToString("#,##0.00");
             }
 
             //Final Output to User [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, 
@@ -157,7 +162,7 @@ namespace FortuneTeller
             //Program should be able to handle whether or not a user inputs capital or lowercase letters.
             {
                 Console.WriteLine(firstName + " " + lastName + " will retire in " + yearRetire + " years with $" + bankAccount + " in the bank,");
-                Console.Write("a vacation home in " + vacHome + " and a " + transport + ".");
+                Console.Write("a vacation home in " + vacHome + " and " + transport + ".");
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
